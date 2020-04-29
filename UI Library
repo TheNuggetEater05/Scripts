@@ -1,83 +1,78 @@
--- Gui to Lua
--- Version: 3.2
 
--- Instances:
+local library = {}
 
-local UILib = Instance.new("ScreenGui")
-local TopFrame = Instance.new("Frame")
-local Container = Instance.new("Frame")
-local Button = Instance.new("TextButton")
-local UIGridLayout = Instance.new("UIGridLayout")
-local Title = Instance.new("TextLabel")
+function library:CreateWindow(name)
 
-local Library = {}
+    local UIGridLayout = Instance.new("UIGridLayout")
+    local Title = Instance.new("TextLabel")
+    local UILib = Instance.new("ScreenGui")
+    local TopFrame = Instance.new("Frame")
+    local Container = Instance.new("Frame")
 
-function Library:CreateMain()
-	
-	UIGridLayout.Parent = Container
-	UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
-	UIGridLayout.CellSize = UDim2.new(0, 100, 0, 30)
+    UILib.Name = "UI Lib "
+    UILib.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    UILib.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-	Title.Name = "Title"
-	Title.Parent = TopFrame
-	Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Title.BackgroundTransparency = 1.000
-	Title.BorderSizePixel = 0
-	Title.Position = UDim2.new(0, 0, -0.0234816708, 0)
-	Title.Size = UDim2.new(0, 521, 0, 19)
-	Title.Font = Enum.Font.Cartoon
-	Title.TextColor3 = Color3.fromRGB(221, 221, 221)
-	Title.TextScaled = true
-	Title.TextSize = 14.000
-	Title.TextWrapped = true
-	Title.Text = "Test"
-	
-	UILib.Name = "UI Lib "
-	UILib.Parent = game.CoreGui
-	UILib.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    TopFrame.Name = "TopFrame"
+    TopFrame.Parent = UILib
+    TopFrame.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
+    TopFrame.BorderSizePixel = 0
+    TopFrame.Position = UDim2.new(0.188868612, 0, 0.260956168, 0)
+    TopFrame.Size = UDim2.new(0, 521, 0, 19)
 
-	TopFrame.Name = "TopFrame"
-	TopFrame.Parent = UILib
-	TopFrame.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
-	TopFrame.BorderSizePixel = 0
-	TopFrame.Position = UDim2.new(0.188868612, 0, 0.260956168, 0)
-	TopFrame.Size = UDim2.new(0, 521, 0, 19)
-	TopFrame.Draggable = true
+    Container.Name = "Container"
+    Container.Parent = TopFrame
+    Container.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+    Container.BorderSizePixel = 0
+    Container.Position = UDim2.new(0, 0, 0.966682851, 0)
+    Container.Size = UDim2.new(0, 521, 0, 260)
 
-	Container.Name = "Container"
-	Container.Parent = TopFrame
-	Container.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
-	Container.BorderSizePixel = 0
-	Container.Position = UDim2.new(0, 0, 0.966682851, 0)
-	Container.Size = UDim2.new(0, 521, 0, 260)
-	
-	local SexyLibrary = {}
-	
-	function SexyLibrary:CreateButton(name)
-		
-	Button.Name = "Button"
-	Button.Parent = Container
-	Button.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
-	Button.BorderColor3 = Color3.fromRGB(31, 31, 31)
-	Button.BorderSizePixel = 0
-	Button.Position = UDim2.new(0.0345489457, 0, 0.0500000007, 0)
-	Button.Size = UDim2.new(0, 100, 0, 45)
-	Button.Font = Enum.Font.Code
-	Button.TextColor3 = Color3.fromRGB(212, 212, 212)
-	Button.TextScaled = true
-	Button.TextSize = 14.000
-	Button.TextWrapped = true
-	Button.Text = name
-	end
-	
-	return SexyLibrary;
-	
+    UIGridLayout.Parent = Container
+    UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+    UIGridLayout.CellSize = UDim2.new(0, 100, 0, 30)
+
+    Title.Name = "Title"
+    Title.Parent = TopFrame
+    Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Title.BackgroundTransparency = 1.000
+    Title.BorderSizePixel = 0
+    Title.Position = UDim2.new(0, 0, -0.0234816708, 0)
+    Title.Size = UDim2.new(0, 521, 0, 19)
+    Title.Font = Enum.Font.Cartoon
+    Title.TextColor3 = Color3.fromRGB(221, 221, 221)
+    Title.TextScaled = true
+    Title.TextSize = 14.000
+    Title.TextWrapped = true
+    Title.Text = name
+
+    local EpicLibrary = {}
+
+    function EpicLibrary:CreateButton(name)
+
+        local Button = Instance.new("TextButton")
+
+        Button.Name = "Button"
+        Button.Parent = Container
+        Button.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+        Button.BorderColor3 = Color3.fromRGB(31, 31, 31)
+        Button.BorderSizePixel = 0
+        Button.Position = UDim2.new(0.0345489457, 0, 0.0500000007, 0)
+        Button.Size = UDim2.new(0, 100, 0, 45)
+        Button.Font = Enum.Font.Code
+        Button.TextColor3 = Color3.fromRGB(212, 212, 212)
+        Button.TextScaled = true
+        Button.TextSize = 14.000
+        Button.TextWrapped = true
+        Button.Text = name
+
+        return EpicLibrary
+
+
+    end
+return library
+
 end
-
-return Library
-
---Properties:
-
+return library
 
 
 
