@@ -12,7 +12,7 @@ local Title = Instance.new("TextLabel")
 
 local Library = {}
 
-function Library:CreateMain(name)
+function Library:CreateMain(mainname)
 	
 	UIGridLayout.Parent = Container
 	UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
