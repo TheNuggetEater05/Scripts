@@ -30,7 +30,7 @@ function Library:CreateMain(mainname)
 	Title.TextScaled = true
 	Title.TextSize = 14.000
 	Title.TextWrapped = true
-	Title.Text = name
+	Title.Text = mainname
 	
 	UILib.Name = "UI Lib "
 	UILib.Parent = game.CoreGui
