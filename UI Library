@@ -65,11 +65,8 @@ function library:CreateWindow(name)
         Button.TextWrapped = true
         Button.Text = name
 
-        return EpicLibrary
-
-
     end
-return library
+    return EpicLibrary
 
 end
 return library
