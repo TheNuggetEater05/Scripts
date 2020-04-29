@@ -12,7 +12,7 @@ local Title = Instance.new("TextLabel")
 
 local Library = {}
 
-function Library:CreateMain()
+function Library:CreateMain(name)
 	
 	UIGridLayout.Parent = Container
 	UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
@@ -30,6 +30,7 @@ function Library:CreateMain()
 	Title.TextScaled = true
 	Title.TextSize = 14.000
 	Title.TextWrapped = true
+	Title.Text = name
 	
 	UILib.Name = "UI Lib "
 	UILib.Parent = game.CoreGui
@@ -41,6 +42,7 @@ function Library:CreateMain()
 	TopFrame.BorderSizePixel = 0
 	TopFrame.Position = UDim2.new(0.188868612, 0, 0.260956168, 0)
 	TopFrame.Size = UDim2.new(0, 521, 0, 19)
+	TopFrame.Draggable = true
 
 	Container.Name = "Container"
 	Container.Parent = TopFrame
@@ -53,7 +55,7 @@ function Library:CreateMain()
 	
 	function SexyLibrary:CreateButton(name)
 		
-		Button.Name = "Button"
+	Button.Name = "Button"
 	Button.Parent = Container
 	Button.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
 	Button.BorderColor3 = Color3.fromRGB(31, 31, 31)
@@ -65,14 +67,14 @@ function Library:CreateMain()
 	Button.TextScaled = true
 	Button.TextSize = 14.000
 	Button.TextWrapped = true
-	Button.Text = "{[PLACEHOLDER]}"
+	Button.Text = name
 	end
 	
 	return SexyLibrary;
 	
 end
 
-return Library;
+return Library
 
 --Properties:
 
